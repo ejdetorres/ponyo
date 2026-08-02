@@ -216,7 +216,7 @@ function moveButton() {
         funnyText.textContent = messages[messageIndex];
         messageIndex = (messageIndex + 1) % messages.length;
        
-noBtn.addEventListener(/* event */, moveButton);
+noBtn.addEventListener("click", moveButton);
 
 }
 
