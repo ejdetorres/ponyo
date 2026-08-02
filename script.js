@@ -184,3 +184,42 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 });
+
+const noBtn = document.getElementById("noBtn");
+
+const funnyText = document.getElementById("funnyText");
+
+const messages = [
+    "Wait... 🥺",
+    "Think again 😂",
+    "You're too fast! 😭",
+    "Almost caught me ❤️",
+    "Okay... I'll stop running 😊"
+];
+
+let messageIndex = 0;
+
+noBtn.addEventListener(/* event */, moveButton);
+
+noBtn.addEventListener("click", moveButton);
+
+function moveButton() {
+
+    const area = document.querySelector(".button-area");
+
+    const maxX = area.clientWidth - noBtn.offsetWidth;
+    const maxY = area.clientHeight - noBtn.offsetHeight;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    if (funnyText) {
+        funnyText.textContent = messages[messageIndex];
+        messageIndex = (messageIndex + 1) % messages.length;
+
+}
+
+}
