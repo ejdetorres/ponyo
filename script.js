@@ -84,8 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ==========================================
        Generic Celebration Example
     ========================================== */
-    const noBtn = document.getElementById("noBtn");
-noBtn.addEventListener("mouseenter", moveButton);
    
     const yesBtn = document.getElementById("yesBtn");
 
@@ -187,6 +185,8 @@ noBtn.addEventListener("mouseenter", moveButton);
 
 });
 
+const noBtn = document.getElementById("noBtn");
+
 function moveButton() {
 
     const area = document.querySelector(".button-area");
@@ -199,5 +199,7 @@ function moveButton() {
 
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
+
+noBtn.addEventListener(/* event */, moveButton);
 
 }
