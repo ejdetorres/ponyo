@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 moveButton(noBtn);
-}
+});
 
 function moveButton() {
 
