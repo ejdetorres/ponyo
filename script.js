@@ -215,5 +215,4 @@ function moveButton() {
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
 
-});
-
+}
