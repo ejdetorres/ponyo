@@ -165,24 +165,9 @@ document.addEventListener("DOMContentLoaded", () => {
        Music Helper
     ========================================== */
 
-    const bgMusic=document.getElementById("bgMusic");
-
-    window.playMusic=function(){
-
-        if(!bgMusic) return;
-
-        bgMusic.play().catch(()=>{});
-
-    };
-
-    window.pauseMusic=function(){
-
-        if(!bgMusic) return;
-
-        bgMusic.pause();
-
-    };
-
+    continueBtn.addEventListener("click", () => {
+    bgMusic.play().catch(console.error);
+    showScreen("message");
 });
 
 const noBtn = document.getElementById("noBtn");
