@@ -19,13 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
 
             loader.style.opacity = "0";
-            loader.style.pointerEvents = "none";
-           
             setTimeout(() => {
-                loader.remove();
+            loader.style.display = "none";
+           
+
             }, 800);
 
-        }, 1000);
+        }, 1200);
 
     });
 
