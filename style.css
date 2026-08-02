@@ -286,7 +286,7 @@ h2{
 
     inset:0;
 
-    display:none;
+    display:flex;
 
     flex-direction:column;
 
