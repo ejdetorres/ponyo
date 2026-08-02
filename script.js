@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ==========================================
        Loading Screen
     ========================================== */
-
-    const loader = document.getElementById("loading-screen");
-
-    window.addEventListener("load", () => {
+   
+   window.addEventListener("load", () => {
+      
+        const loader = document.getElementById("loading-screen");
 
         if (!loader) return;
 
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             loader.style.opacity = "0";
             loader.style.pointerEvents = "none";
-
+           
             setTimeout(() => {
                 loader.remove();
             }, 800);
