@@ -185,7 +185,6 @@ const loader = document.getElementById("loading-screen");
 
 });
 
-
 const noBtn = document.getElementById("noBtn");
 
 const funnyText = document.getElementById("funnyText");
