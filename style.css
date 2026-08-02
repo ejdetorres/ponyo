@@ -367,7 +367,7 @@ footer{
 
 .no-btn{
     position:absolute;
-    left:70%;
+    left:75%;
     top:50%;
     transform:translate(-50%, -50%);
     z-index:3;
@@ -451,8 +451,6 @@ button,
 
 .yes-btn:hover{
 
-    transform:translateY(-3px);
-
     background:#ff468d;
 
 }
@@ -460,8 +458,6 @@ button,
 /* ===================================== */
 
 .no-btn{
-
-    position:absolute;
 
     background:#ffffff;
 
@@ -471,10 +467,6 @@ button,
 
     padding:15px 38px;
 
-    left:58%;
-    top:50%;
-
-    transform:translate(-50%,-50%);
 
     transition:
         left .25s ease,
