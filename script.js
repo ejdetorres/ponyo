@@ -185,6 +185,7 @@ const loader = document.getElementById("loading-screen");
 
 });
 
+
 const noBtn = document.getElementById("noBtn");
 
 const funnyText = document.getElementById("funnyText");
@@ -214,4 +215,5 @@ function moveButton() {
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
 
-}
+});
+
