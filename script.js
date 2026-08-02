@@ -143,3 +143,25 @@ function pauseMusic(){
     bgMusic.pause();
 
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const continueBtn = document.getElementById("continueBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    if (continueBtn) {
+        continueBtn.addEventListener("click", () => {
+            showScreen("message");
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+            showScreen("question");
+        });
+    }
+
+});
+
+
