@@ -215,4 +215,9 @@ function moveButton() {
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
 
+   if (funnyText) {
+        funnyText.textContent = messages[messageIndex];
+        messageIndex = (messageIndex + 1) % messages.length;
+    }
+
 }
