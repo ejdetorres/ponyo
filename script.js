@@ -199,7 +199,7 @@ const messages = [
 
 let messageIndex = 0;
 
-noBtn.addEventListener("click", moveButton);
+noBtn.addEventListener(moveButton, "click");
 
 function moveButton() {
 
