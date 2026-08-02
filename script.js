@@ -187,6 +187,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const noBtn = document.getElementById("noBtn");
 
+const funnyText = document.getElementById("funnyText");
+
+const messages = [
+    "Wait... 🥺",
+    "Think again 😂",
+    "You're too fast! 😭",
+    "Almost caught me ❤️",
+    "Okay... I'll stop running 😊"
+];
+
+let messageIndex = 0;
+
 function moveButton() {
 
     const area = document.querySelector(".button-area");
@@ -200,6 +212,11 @@ function moveButton() {
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
 
+    if (funnyText) {
+        funnyText.textContent = messages[messageIndex];
+        messageIndex = (messageIndex + 1) % messages.length;
+       
 noBtn.addEventListener(/* event */, moveButton);
 
 }
+
