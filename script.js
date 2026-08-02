@@ -166,10 +166,7 @@ const loader = document.getElementById("loading-screen");
        Music Helper
     ========================================== */
 
-    continueBtn.addEventListener("click", () => {
-    bgMusic.play().catch(console.error);
-    showScreen("message");
-});
+   
 
 const noBtn = document.getElementById("noBtn");
 
