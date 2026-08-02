@@ -187,6 +187,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const noBtn = document.getElementById("noBtn");
 
+const funnyText = document.getElementById("funnyText");
+
+const messages = [
+    "Wait... 🥺",
+    "Think again 😂",
+    "You're too fast! 😭",
+    "Almost caught me ❤️",
+    "Okay... I'll stop running 😊"
+];
+
+let messageIndex = 0;
+
 noBtn.addEventListener("mouseenter", moveButton);
 
 function moveButton() {
@@ -201,5 +213,7 @@ function moveButton() {
 
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
+
+}
 
 }
