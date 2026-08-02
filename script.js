@@ -1,165 +1,186 @@
 /* ======================================================
-   Loading Screen
+   Generic Website Utilities
 ====================================================== */
 
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
+
+    console.log("script.js loaded");
+
+    /* ==========================================
+       Loading Screen
+    ========================================== */
 
     const loader = document.getElementById("loading-screen");
 
-    if (!loader) return;
+    window.addEventListener("load", () => {
 
-    setTimeout(() => {
-
-        loader.style.opacity = "0";
+        if (!loader) return;
 
         setTimeout(() => {
 
-            loader.style.display = "none";
+            loader.style.opacity = "0";
+            loader.style.pointerEvents = "none";
 
-        }, 800);
+            setTimeout(() => {
+                loader.remove();
+            }, 800);
 
-    }, 1200);
+        }, 1000);
 
-});
+    });
 
-document.addEventListener("DOMContentLoaded", () => {
+    /* ==========================================
+       Generic Screen Navigation
+    ========================================== */
+
+    function showScreen(id){
+
+        document.querySelectorAll(".screen").forEach(screen=>{
+            screen.classList.remove("active");
+        });
+
+        const target=document.getElementById(id);
+
+        if(target){
+            target.classList.add("active");
+        }
+
+    }
+
+    // Make available globally if needed
+    window.showScreen = showScreen;
+
+    /* ==========================================
+       Generic Navigation Buttons
+    ========================================== */
 
     const continueBtn = document.getElementById("continueBtn");
     const nextBtn = document.getElementById("nextBtn");
 
-    if (continueBtn) {
-        continueBtn.addEventListener("click", () => {
+    if(continueBtn){
+
+        continueBtn.addEventListener("click", ()=>{
+
+            console.log("Continue clicked");
+
             showScreen("message");
+
         });
+
     }
 
-    if (nextBtn) {
-        nextBtn.addEventListener("click", () => {
+    if(nextBtn){
+
+        nextBtn.addEventListener("click", ()=>{
+
+            console.log("Next clicked");
+
             showScreen("question");
+
         });
+
     }
+
+    /* ==========================================
+       Generic Celebration Example
+    ========================================== */
+
+    const yesBtn = document.getElementById("yesBtn");
+
+    if(yesBtn){
+
+        yesBtn.addEventListener("click", ()=>{
+
+            launchConfetti();
+
+            showScreen("celebration");
+
+        });
+
+    }
+
+    /* ==========================================
+       Floating Hearts
+    ========================================== */
+
+    const heartsContainer = document.getElementById("hearts");
+
+    function createHeart(){
+
+        if(!heartsContainer) return;
+
+        const heart=document.createElement("div");
+
+        heart.className="heart";
+
+        heart.textContent="❤️";
+
+        heart.style.left=Math.random()*100+"vw";
+
+        heart.style.fontSize=(14+Math.random()*18)+"px";
+
+        heart.style.animationDuration=(6+Math.random()*4)+"s";
+
+        heartsContainer.appendChild(heart);
+
+        setTimeout(()=>heart.remove(),9000);
+
+    }
+
+    setInterval(createHeart,700);
+
+    /* ==========================================
+       Generic Confetti
+    ========================================== */
+
+    const confettiContainer=document.getElementById("confetti");
+
+    function launchConfetti(){
+
+        if(!confettiContainer) return;
+
+        for(let i=0;i<80;i++){
+
+            const piece=document.createElement("div");
+
+            piece.className="confetti-piece";
+
+            piece.style.left=Math.random()*100+"vw";
+
+            piece.style.background=
+                `hsl(${Math.random()*360},90%,70%)`;
+
+            piece.style.animationDuration=
+                (2+Math.random()*2)+"s";
+
+            confettiContainer.appendChild(piece);
+
+            setTimeout(()=>piece.remove(),4500);
+
+        }
+
+    }
+
+    /* ==========================================
+       Music Helper
+    ========================================== */
+
+    const bgMusic=document.getElementById("bgMusic");
+
+    window.playMusic=function(){
+
+        if(!bgMusic) return;
+
+        bgMusic.play().catch(()=>{});
+
+    };
+
+    window.pauseMusic=function(){
+
+        if(!bgMusic) return;
+
+        bgMusic.pause();
+
+    };
 
 });
-
-
-/* ======================================================
-   Generic Screen Navigation
-====================================================== */
-
-function showScreen(id){
-
-    document
-        .querySelectorAll(".screen")
-        .forEach(screen=>{
-
-            screen.classList.remove("active");
-
-        });
-
-    const target=document.getElementById(id);
-
-    if(target){
-
-        target.classList.add("active");
-
-    }
-
-}
-
-
-/* ======================================================
-   Floating Hearts
-====================================================== */
-
-const heartsContainer=document.getElementById("hearts");
-
-function createHeart(){
-
-    if(!heartsContainer) return;
-
-    const heart=document.createElement("div");
-
-    heart.className="heart";
-
-    heart.innerHTML="❤️";
-
-    heart.style.left=Math.random()*100+"vw";
-
-    heart.style.animationDuration=
-        (6+Math.random()*4)+"s";
-
-    heart.style.fontSize=
-        (14+Math.random()*18)+"px";
-
-    heartsContainer.appendChild(heart);
-
-    setTimeout(()=>{
-
-        heart.remove();
-
-    },9000);
-
-}
-
-setInterval(createHeart,700);
-
-
-/* ======================================================
-   Simple Confetti
-====================================================== */
-
-const confettiContainer=document.getElementById("confetti");
-
-function launchConfetti(){
-
-    if(!confettiContainer) return;
-
-    for(let i=0;i<80;i++){
-
-        const piece=document.createElement("div");
-
-        piece.className="confetti-piece";
-
-        piece.style.left=Math.random()*100+"vw";
-
-        piece.style.animationDuration=
-            (2+Math.random()*2)+"s";
-
-        piece.style.background=
-            `hsl(${Math.random()*360},90%,70%)`;
-
-        confettiContainer.appendChild(piece);
-
-        setTimeout(()=>{
-
-            piece.remove();
-
-        },4500);
-
-    }
-
-}
-
-
-/* ======================================================
-   Music Helper
-====================================================== */
-
-const bgMusic=document.getElementById("bgMusic");
-
-function playMusic(){
-
-    if(!bgMusic) return;
-
-    bgMusic.play().catch(()=>{});
-
-}
-
-function pauseMusic(){
-
-    if(!bgMusic) return;
-
-    bgMusic.pause();
-
-}
-
