@@ -9,23 +9,23 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ==========================================
        Loading Screen
     ========================================== */
-   
-   window.addEventListener("load", () => {
-      
-        const loader = document.getElementById("loading-screen");
+
+    const loader = document.getElementById("loading-screen");
+
+    window.addEventListener("load", () => {
 
         if (!loader) return;
 
         setTimeout(() => {
 
             loader.style.opacity = "0";
-            setTimeout(() => {
-            loader.style.display = "none";
-           
+            loader.style.pointerEvents = "none";
 
+            setTimeout(() => {
+                loader.remove();
             }, 800);
 
-        }, 1200);
+        }, 1000);
 
     });
 
@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================================== */
 
     const yesBtn = document.getElementById("yesBtn");
-    const noBtn = document.getElementById("noBtn");
 
     if(yesBtn){
 
@@ -185,20 +184,3 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 });
-
-moveButton(noBtn);
-
-function moveButton() {
-
-    const area = document.querySelector(".button-area");
-
-    const maxX = area.clientWidth - noBtn.offsetWidth;
-    const maxY = area.clientHeight - noBtn.offsetHeight;
-
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
-
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
-
-}
