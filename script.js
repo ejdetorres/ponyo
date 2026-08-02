@@ -10,24 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
        Loading Screen
     ========================================== */
 
-    const loader = document.getElementById("loading-screen");
-
-    window.addEventListener("load", () => {
-
-        if (!loader) return;
-
-        setTimeout(() => {
-
-            loader.style.opacity = "0";
-            loader.style.pointerEvents = "none";
-
-            setTimeout(() => {
-                loader.remove();
-            }, 800);
-
-        }, 1000);
-
-    });
+   
 
     /* ==========================================
        Generic Screen Navigation
