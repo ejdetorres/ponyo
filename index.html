@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>For Someone Special ❤️</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ====================================== -->
+<!-- Loading Screen -->
+<!-- ====================================== -->
+
+<div id="loading-screen">
+
+    <div class="loader-heart">
+        ❤️
+    </div>
+
+    <p>Preparing something special...</p>
+
+</div>
+
+<!-- ====================================== -->
+<!-- Floating Background -->
+<!-- ====================================== -->
+
+<div id="background">
+
+    <div class="gradient"></div>
+
+    <div id="hearts"></div>
+
+    <div id="petals"></div>
+
+    <div id="sparkles"></div>
+
+</div>
+
+<!-- ====================================== -->
+<!-- Main Container -->
+<!-- ====================================== -->
+
+<div id="app">
+
+<!-- ====================================== -->
+<!-- Welcome Screen -->
+<!-- ====================================== -->
+
+<section
+id="welcome"
+class="screen active">
+
+    <div class="glass-card">
+
+        <div class="emoji">
+
+            🌸
+
+        </div>
+
+        <h1>
+
+            Hi! 😊
+
+        </h1>
+
+        <p class="subtitle">
+
+            I have something important
+            to ask you...
+
+        </p>
+
+        <button
+        class="primary-btn"
+        id="continueBtn">
+
+            Continue ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- Message Screen -->
+<!-- ====================================== -->
+
+<section
+id="message"
+class="screen">
+
+    <div class="glass-card">
+
+        <div class="emoji">
+
+            💌
+
+        </div>
+
+        <h2>
+
+            Before you answer...
+
+        </h2>
+
+        <p class="story">
+
+            I just want you to know
+
+        </p>
+
+        <p class="story highlight">
+
+            that you showed me what
+            true happiness feels like,
+
+        </p>
+
+        <p class="story">
+
+            a happiness I never knew
+            existed.
+
+        </p>
+
+        <button
+        class="primary-btn"
+        id="nextBtn">
+
+            Next →
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- Question Screen -->
+<!-- ====================================== -->
+
+<section
+id="question"
+class="screen">
+
+    <div class="glass-card question-card">
+
+        <div class="emoji">
+
+            🥺❤️
+
+        </div>
+
+        <h2>
+
+            Do I have a chance
+            with you?
+
+        </h2>
+
+        <!--
+            This text changes
+            while the playful
+            animation runs.
+        -->
+
+        <p
+        id="funnyText"
+        class="funny-text">
+
+            Take your time. 😊
+
+        </p>
+
+        <div
+        class="button-area">
+
+            <button
+            id="yesBtn"
+            class="yes-btn">
+
+                ❤️ Yes
+
+            </button>
+
+            <button
+            id="noBtn"
+            class="no-btn">
+
+                💔 No
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- Celebration Screen -->
+<!-- ====================================== -->
+
+<section
+id="celebration"
+class="screen">
+
+    <div class="celebration-bg">
+
+        <div id="confetti"></div>
+
+        <div id="floatingHearts"></div>
+
+    </div>
+
+    <div class="glass-card celebration-card">
+
+        <div class="big-heart">
+
+            ❤️
+
+        </div>
+
+        <h1>
+
+            You just made my day.
+
+        </h1>
+
+        <p class="celebrate-text">
+
+            Thank you for giving me
+            a chance.
+
+        </p>
+
+        <p class="celebrate-text">
+
+            I'd love to hear from you.
+
+        </p>
+
+        <div class="celebrate-buttons">
+
+            <a
+            class="facebook-btn"
+            href="https://www.facebook.com/elton.detorres.7"
+            target="_blank">
+
+                <i class="fab fa-facebook"></i>
+
+                Chat with me ❤️
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- Music -->
+<!-- ====================================== -->
+
+<audio
+id="bgMusic"
+loop>
+
+    <!--
+        Add your music later.
+
+        Example:
+
+        <source
+        src="music/song.mp3"
+        type="audio/mpeg">
+
+    -->
+
+</audio>
+
+<!-- ====================================== -->
+<!-- Footer -->
+<!-- ====================================== -->
+
+<footer>
+
+    <p>
+
+        Made with ❤️
+
+    </p>
+
+</footer>
+
+</div>
+<!-- End App -->
+
+<!-- ====================================== -->
+<!-- EmailJS -->
+<!-- ====================================== -->
+
+<script
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+<script>
+
+    /*
+        Replace these values later.
+
+        emailjs.init({
+            publicKey: "YOUR_PUBLIC_KEY"
+        });
+
+    */
+
+</script>
+
+<!-- ====================================== -->
+<!-- Main JavaScript -->
+<!-- ====================================== -->
+
+<script
+src="script.js"></script>
+
+</body>
+</html>
