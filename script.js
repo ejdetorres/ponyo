@@ -199,6 +199,8 @@ const messages = [
 
 let messageIndex = 0;
 
+noBtn.addEventListener("click", moveButton);
+
 function moveButton() {
 
     const area = document.querySelector(".button-area");
@@ -215,8 +217,8 @@ function moveButton() {
     if (funnyText) {
         funnyText.textContent = messages[messageIndex];
         messageIndex = (messageIndex + 1) % messages.length;
-       
-noBtn.addEventListener("click", moveButton);
+
+}
 
 }
 
