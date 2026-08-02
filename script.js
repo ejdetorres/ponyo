@@ -186,6 +186,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+moveButton(noBtn);
+}
+
 function moveButton() {
 
     const area = document.querySelector(".button-area");
