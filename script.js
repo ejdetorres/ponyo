@@ -26,7 +26,7 @@ const loader = document.getElementById("loading-screen");
 
         }, 1000);
 
-    }
+    });
 
    
 
