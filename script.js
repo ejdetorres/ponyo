@@ -168,113 +168,113 @@ const loader = document.getElementById("loading-screen");
    Music Helper
 ========================================== */
 
-const bgMusic = document.getElementById("bgMusic");
+   const bgMusic = document.getElementById("bgMusic");
 
 // Set initial volume
-if (bgMusic) {
-    bgMusic.volume = 0;
-}
+   if (bgMusic) {
+       bgMusic.volume = 0;
+   }
 
-window.playMusic = function () {
+   window.playMusic = function () {
 
-    if (!bgMusic) return;
+       if (!bgMusic) return;
 
     // Don't restart if already playing
-    if (!bgMusic.paused) return;
+       if (!bgMusic.paused) return;
 
-    bgMusic.volume = 0;
+       bgMusic.volume = 0;
 
-    bgMusic.play().catch(err => {
-        console.log("Music couldn't start:", err);
-    });
+       bgMusic.play().catch(err => {
+           console.log("Music couldn't start:", err);
+       });
 
-    let volume = 0;
+       let volume = 0;
 
-    const fadeIn = setInterval(() => {
+       const fadeIn = setInterval(() => {
 
-        volume += 0.05;
+           volume += 0.05;
 
-        if (volume >= 1) {
+           if (volume >= 1) {
 
-            bgMusic.volume = 1;
-            clearInterval(fadeIn);
+               bgMusic.volume = 1;
+               clearInterval(fadeIn);
 
-        } else {
+           } else {
 
-            bgMusic.volume = volume;
+               bgMusic.volume = volume;
 
-        }
+           }
 
-    }, 150);
+       }, 150);
 
-};
+   };
 
-window.pauseMusic = function () {
+   window.pauseMusic = function () {
 
-    if (!bgMusic) return;
+       if (!bgMusic) return;
 
-    let volume = bgMusic.volume;
+       let volume = bgMusic.volume;
 
-    const fadeOut = setInterval(() => {
+       const fadeOut = setInterval(() => {
 
-        volume -= 0.05;
+           volume -= 0.05;
 
-        if (volume <= 0) {
+           if (volume <= 0) {
 
-            bgMusic.volume = 0;
-            bgMusic.pause();
-            clearInterval(fadeOut);
+               bgMusic.volume = 0;
+               bgMusic.pause();
+               clearInterval(fadeOut);
 
-        } else {
+           } else {
 
-            bgMusic.volume = volume;
+               bgMusic.volume = volume;
 
-        }
+           }
 
-    }, 100);
+       }, 100);
 
-};
+   };
 
 
-const noBtn = document.getElementById("noBtn");
+   const noBtn = document.getElementById("noBtn");
 
-const funnyText = document.getElementById("funnyText");
+   const funnyText = document.getElementById("funnyText");
 
-const messages = [
-    "Wait... 🥺",
-    "Don't decide just yet. ❤️",
-    "Please? ❤️",
-    "My treat! 🍽️",
-    "Give me a chance. 🌸",
-    "I'd really love to take you out. 💕",
-    "I promise it'll be fun! ✨",
-    "Pretty please? 🥹",
-    "I'll make it worth your time. 🌸",
-    "Okay... let's try again 😊"
-];
+   const messages = [
+       "Wait... 🥺",
+       "Don't decide just yet. ❤️",
+       "Please? ❤️",
+       "My treat! 🍽️",
+       "Give me a chance. 🌸",
+       "I'd really love to take you out. 💕",
+       "I promise it'll be fun! ✨",
+       "Pretty please? 🥹",
+       "I'll make it worth your time. 🌸",
+       "Okay... let's try again 😊"
+   ];
 
-let messageIndex = 0;
+   let messageIndex = 0;
 
-noBtn.addEventListener("mouseenter", moveButton);
+   noBtn.addEventListener("mouseenter", moveButton);
 
-function moveButton() {
+   function moveButton() {
 
-    const area = document.querySelector(".button-area");
+       const area = document.querySelector(".button-area");
 
-    const maxX = area.clientWidth - noBtn.offsetWidth;
-    const maxY = area.clientHeight - noBtn.offsetHeight;
+       const maxX = area.clientWidth - noBtn.offsetWidth;
+       const maxY = area.clientHeight - noBtn.offsetHeight;
 
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
+       const x = Math.random() * maxX;
+       const y = Math.random() * maxY;
 
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
+       noBtn.style.left = x + "px";
+       noBtn.style.top = y + "px";
 
-   if (funnyText) {
-        funnyText.textContent = messages[messageIndex];
-        messageIndex = (messageIndex + 1) % messages.length;
-    }
+      if (funnyText) {
+           funnyText.textContent = messages[messageIndex];
+           messageIndex = (messageIndex + 1) % messages.length;
+       }
 
-};
+   };
 
 });
