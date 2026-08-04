@@ -277,4 +277,4 @@ const loader = document.getElementById("loading-screen");
 
    }
 
-}
+});
