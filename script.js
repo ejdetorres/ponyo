@@ -62,6 +62,8 @@ const loader = document.getElementById("loading-screen");
 
         continueBtn.addEventListener("click", ()=>{
 
+            playMusic();
+           
             console.log("Continue clicked");
 
             showScreen("message");
