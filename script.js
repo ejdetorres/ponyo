@@ -162,28 +162,76 @@ const loader = document.getElementById("loading-screen");
 
     }
 
-    /* ==========================================
-       Music Helper
-    ========================================== */
- const bgMusic=document.getElementById("bgMusic");
+   /* ==========================================
+   Music Helper
+========================================== */
 
-    window.playMusic=function(){
+const bgMusic = document.getElementById("bgMusic");
 
-        if(!bgMusic) return;
+// Set initial volume
+if (bgMusic) {
+    bgMusic.volume = 0;
+}
 
-        bgMusic.play().catch(()=>{});
+window.playMusic = function () {
 
-    };
+    if (!bgMusic) return;
 
-    window.pauseMusic=function(){
+    // Don't restart if already playing
+    if (!bgMusic.paused) return;
 
-        if(!bgMusic) return;
+    bgMusic.volume = 0;
 
-        bgMusic.pause();
+    bgMusic.play().catch(err => {
+        console.log("Music couldn't start:", err);
+    });
 
-    };
+    let volume = 0;
 
-});
+    const fadeIn = setInterval(() => {
+
+        volume += 0.05;
+
+        if (volume >= 1) {
+
+            bgMusic.volume = 1;
+            clearInterval(fadeIn);
+
+        } else {
+
+            bgMusic.volume = volume;
+
+        }
+
+    }, 150);
+
+};
+
+window.pauseMusic = function () {
+
+    if (!bgMusic) return;
+
+    let volume = bgMusic.volume;
+
+    const fadeOut = setInterval(() => {
+
+        volume -= 0.05;
+
+        if (volume <= 0) {
+
+            bgMusic.volume = 0;
+            bgMusic.pause();
+            clearInterval(fadeOut);
+
+        } else {
+
+            bgMusic.volume = volume;
+
+        }
+
+    }, 100);
+
+};
 
 
 const noBtn = document.getElementById("noBtn");
