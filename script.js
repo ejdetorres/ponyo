@@ -255,12 +255,16 @@ const loader = document.getElementById("loading-screen");
 
    let messageIndex = 0;
 
-   noBtn.addEventListener("mouseenter", moveButton);
+   if (noBtn) {
+    noBtn.addEventListener("mouseenter", moveButton);
+   }
 
    function moveButton() {
 
        const area = document.querySelector(".button-area");
-
+      
+       if (!area || !noBtn) return;
+      
        const maxX = area.clientWidth - noBtn.offsetWidth;
        const maxY = area.clientHeight - noBtn.offsetHeight;
 
@@ -277,4 +281,4 @@ const loader = document.getElementById("loading-screen");
 
    }
 
-});
+   });
