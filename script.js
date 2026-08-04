@@ -191,10 +191,15 @@ const funnyText = document.getElementById("funnyText");
 
 const messages = [
     "Wait... 🥺",
-    "Think again 😂",
-    "You're too fast! 😭",
-    "Almost caught me ❤️",
-    "Okay... I'll stop running 😊"
+    "Don't decide just yet. ❤️",
+    "Please? ❤️",
+    "My treat! 🍽️",
+    "Give me a chance. 🌸",
+    "I'd really love to take you out. 💕",
+    "I promise it'll be fun! ✨",
+    "Pretty please? 🥹",
+    "I'll make it worth your time. 🌸",
+    "Okay... let's try again 😊"
 ];
 
 let messageIndex = 0;
