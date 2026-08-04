@@ -26,7 +26,7 @@ const loader = document.getElementById("loading-screen");
 
         }, 1000);
 
-    });
+    }
 
    
 
@@ -275,4 +275,6 @@ function moveButton() {
         messageIndex = (messageIndex + 1) % messages.length;
     }
 
-}
+};
+
+});
