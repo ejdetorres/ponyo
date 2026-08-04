@@ -275,6 +275,6 @@ const loader = document.getElementById("loading-screen");
            messageIndex = (messageIndex + 1) % messages.length;
        }
 
-   };
+   }
 
-});
+
