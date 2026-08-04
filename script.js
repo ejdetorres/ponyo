@@ -165,21 +165,10 @@ const loader = document.getElementById("loading-screen");
     /* ==========================================
        Music Helper
     ========================================== */
- const bgMusic=document.getElementById("bgMusic");
-
-    window.playMusic=function(){
-
-        if(!bgMusic) return;
-
-        bgMusic.play().catch(()=>{});
-
-    };
-
-    window.pauseMusic=function(){
-
-        if(!bgMusic) return;
-
-        bgMusic.pause();
+ const audio = document.getElementById("bgMusic");
+console.log(audio.readyState);
+console.log(audio.paused);
+console.log(audio.currentSrc);
 
     };
 
