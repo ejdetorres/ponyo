@@ -256,7 +256,8 @@ const loader = document.getElementById("loading-screen");
    let messageIndex = 0;
 
    if (noBtn) {
-    noBtn.addEventListener("mouseenter", moveButton);
+    noBtn.addEventListener("mouseenter", moveButton); // Desktop
+    noBtn.addEventListener("touchstart", moveButton); // Mobile
    }
 
    function moveButton() {
