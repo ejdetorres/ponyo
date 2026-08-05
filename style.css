@@ -1015,8 +1015,8 @@ a:hover{
         bottom: 15px;
         transform: translateX(-50%);
 
-        width: 190px;
-        height: 48px;
+        width: 120px;
+        height: 35px;
         font-size: 18px;
         padding: 0;
     }
@@ -1027,8 +1027,8 @@ a:hover{
         top: 15px;
         transform: translateX(-50%);
 
-        width: 190px;
-        height: 48px;
+        width: 120px;
+        height: 35px;
         font-size: 18px;
         padding: 0;
     }
